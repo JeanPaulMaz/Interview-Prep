@@ -10,7 +10,7 @@ namespace FindNthNode
     //Find Nth node from the end of a linked list
     public sealed class NthNodeFinder
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Find Nth node from the end of a linked list");
 
@@ -36,24 +36,25 @@ namespace FindNthNode
 
         }
     }
-    class Node
+    public class Node
     {
         //data
-        public int data;
+        private int data;
         public Node next;
         //public Node prev;
+        public int mydata { get; set;}
 
         //methods
         //constructor
         public Node(int newVal)
         {
-            data = newVal;
+            this.data = newVal;
             next = null;
         }
     }
-    class SinglyLinkedList
+    public class SinglyLinkedList
     {
-        public Node head;
+        public Node head = null;
 
         //this method adds new nodes at the front of the linked list
         public void AddFront(int newVal)
@@ -120,10 +121,6 @@ namespace FindNthNode
 
             Console.WriteLine();
         }
-        //constructor that sets head to null
-        public SinglyLinkedList()
-        {
-            head = null;
-        }
+       
     }
 }
